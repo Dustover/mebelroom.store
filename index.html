@@ -190,8 +190,8 @@
               </div><!-- Icon-Box -->
 
               <div class="col-md-6 icon-box position-relative">
-                <i class="bi bi-broadcast"></i>
-                <h4><a href="" class="stretched-link">Labore consequatur</a></h4>
+                <i class="bi bi-shop"></i>
+                <h4><a class="stretched-link">На рынке <span id="spanDate"></span></a></h4>
                 <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
               </div><!-- Icon-Box -->
 
@@ -1137,7 +1137,20 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script type="text/javascript">
+document.getElementById("spanDate").innerHTML = getAge(2017)
+function getAge(years) {
+ var today = new Date();
+ today.setTime(today.getTime() + (1000*3600*24));
+  age = today.getFullYear() - years;
+    if (age % 10 === 0 || age % 10 >= 5 && age % 10 <= 9 || age % 100 >= 11 && age % 100 <= 14) {
+        return age + ' лет';
+    } else if (age % 100 === 1 || age % 100 === 3 || age % 100 === 4 || age % 100 === 9) {
+        return age + ' год';
+    }
+    return age + ' года';
+}
+  </script>
 </body>
 
 </html>
